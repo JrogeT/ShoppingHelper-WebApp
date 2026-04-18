@@ -6,6 +6,7 @@ import DashboardPage from './pages/DashboardPage'
 import MarketsPage from './pages/MarketsPage'
 import ProductsPage from './pages/ProductsPage'
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage'
+import DeleteAccountPage from './pages/DeleteAccountPage'
 
 function Spinner() {
   return (
@@ -31,6 +32,7 @@ function AppRoutes() {
   return (
     <Routes>
       <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+      <Route path="/delete-account" element={<DeleteAccountPage />} />
       <Route path="/login" element={session ? <Navigate to="/" replace /> : <LoginPage />} />
       <Route
         path="/*"
