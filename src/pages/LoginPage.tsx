@@ -37,20 +37,20 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-crema/50 flex items-center justify-center p-4">
       <div className="w-full max-w-md">
         {/* Logo */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-600 rounded-2xl mb-4 shadow-lg">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-verde rounded-2xl mb-4 shadow-lg">
             <ShoppingCart className="text-white" size={32} />
           </div>
-          <h1 className="text-2xl font-bold text-slate-900">Shopping Helper</h1>
-          <p className="text-slate-500 mt-1 text-sm">Panel de administración</p>
+          <h1 className="text-2xl font-bold text-grafito">Canasta</h1>
+          <p className="text-grafito/70 mt-1 text-sm">Panel de administración</p>
         </div>
 
         {/* Card */}
-        <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-8">
-          <h2 className="text-lg font-semibold text-slate-900 mb-6">
+        <div className="bg-crema rounded-2xl shadow-sm border border-grafito/10 p-8">
+          <h2 className="text-lg font-semibold text-grafito mb-6">
             {mode === 'login' ? 'Iniciar sesión' : 'Crear cuenta'}
           </h2>
 
@@ -62,48 +62,48 @@ export default function LoginPage() {
           )}
 
           {info && (
-            <div className="bg-blue-50 border border-blue-200 text-blue-700 rounded-xl p-3 mb-4 text-sm">
+            <div className="bg-verde/10 border border-verde/30 text-verde rounded-xl p-3 mb-4 text-sm">
               {info}
             </div>
           )}
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="block text-sm font-medium text-slate-700 mb-1.5">
+              <label className="block text-sm font-medium text-grafito/80 mb-1.5">
                 Correo electrónico
               </label>
               <div className="relative">
-                <Mail size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+                <Mail size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-grafito/50" />
                 <input
                   type="email"
                   value={email}
                   onChange={e => setEmail(e.target.value)}
                   required
-                  className="w-full pl-9 pr-4 py-2.5 border border-slate-200 rounded-xl text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full pl-9 pr-4 py-2.5 border border-grafito/10 rounded-xl text-sm text-grafito placeholder-piedra focus:outline-none focus:ring-2 focus:ring-verde focus:border-transparent"
                   placeholder="tu@correo.com"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-slate-700 mb-1.5">
+              <label className="block text-sm font-medium text-grafito/80 mb-1.5">
                 Contraseña
               </label>
               <div className="relative">
-                <Lock size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+                <Lock size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-grafito/50" />
                 <input
                   type={showPassword ? 'text' : 'password'}
                   value={password}
                   onChange={e => setPassword(e.target.value)}
                   required
                   minLength={6}
-                  className="w-full pl-9 pr-10 py-2.5 border border-slate-200 rounded-xl text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full pl-9 pr-10 py-2.5 border border-grafito/10 rounded-xl text-sm text-grafito placeholder-piedra focus:outline-none focus:ring-2 focus:ring-verde focus:border-transparent"
                   placeholder="••••••••"
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(v => !v)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-grafito/50 hover:text-grafito/70"
                 >
                   {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
                 </button>
@@ -113,22 +113,22 @@ export default function LoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-blue-600 hover:bg-blue-700 disabled:opacity-50 text-white font-semibold py-2.5 rounded-xl transition-colors text-sm"
+              className="w-full bg-verde hover:bg-verde/90 disabled:opacity-50 text-white font-semibold py-2.5 rounded-xl transition-colors text-sm"
             >
               {loading ? 'Cargando...' : mode === 'login' ? 'Entrar' : 'Registrarse'}
             </button>
           </form>
 
           <div className="flex items-center gap-3 my-5">
-            <div className="flex-1 h-px bg-slate-200" />
-            <span className="text-xs text-slate-400 font-medium">o continúa con</span>
-            <div className="flex-1 h-px bg-slate-200" />
+            <div className="flex-1 h-px bg-grafito/20" />
+            <span className="text-xs text-grafito/50 font-medium">o continúa con</span>
+            <div className="flex-1 h-px bg-grafito/20" />
           </div>
 
           <button
             onClick={handleGoogle}
             disabled={loading}
-            className="w-full flex items-center justify-center gap-3 border border-slate-200 hover:bg-slate-50 disabled:opacity-50 py-2.5 rounded-xl transition-colors text-sm font-medium text-slate-700"
+            className="w-full flex items-center justify-center gap-3 border border-grafito/10 hover:bg-crema/50 disabled:opacity-50 py-2.5 rounded-xl transition-colors text-sm font-medium text-grafito/80"
           >
             <svg width="18" height="18" viewBox="0 0 24 24">
               <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
@@ -139,11 +139,11 @@ export default function LoginPage() {
             Continuar con Google
           </button>
 
-          <p className="text-center text-sm text-slate-500 mt-6">
+          <p className="text-center text-sm text-grafito/70 mt-6">
             {mode === 'login' ? '¿No tienes cuenta?' : '¿Ya tienes cuenta?'}{' '}
             <button
               onClick={() => { setMode(m => m === 'login' ? 'signup' : 'login'); setError(null); setInfo(null) }}
-              className="text-blue-600 font-medium hover:underline"
+              className="text-verde font-medium hover:underline"
             >
               {mode === 'login' ? 'Regístrate' : 'Inicia sesión'}
             </button>

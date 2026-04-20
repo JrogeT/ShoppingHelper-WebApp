@@ -60,12 +60,12 @@ function SupermarketModal({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/20">
-      <div className="bg-white rounded-2xl shadow-xl w-full max-w-md">
-        <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100">
-          <h3 className="font-semibold text-slate-900">
+      <div className="bg-crema rounded-2xl shadow-xl w-full max-w-md">
+        <div className="flex items-center justify-between px-6 py-4 border-b border-grafito/10">
+          <h3 className="font-semibold text-grafito">
             {supermarket ? 'Editar supermercado' : 'Nuevo supermercado'}
           </h3>
-          <button onClick={onClose} className="text-slate-400 hover:text-slate-600">
+          <button onClick={onClose} className="text-grafito/50 hover:text-grafito/70">
             <X size={18} />
           </button>
         </div>
@@ -79,7 +79,7 @@ function SupermarketModal({
           )}
 
           <div>
-            <label className="block text-sm font-medium text-slate-700 mb-1.5">
+            <label className="block text-sm font-medium text-grafito/80 mb-1.5">
               Nombre del supermercado
             </label>
             <input
@@ -87,23 +87,23 @@ function SupermarketModal({
               value={name}
               onChange={e => setName(e.target.value)}
               required
-              className="w-full px-3 py-2.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2.5 border border-grafito/10 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-verde"
               placeholder="Ej: Hipermaxi"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-slate-700 mb-1">
+            <label className="block text-sm font-medium text-grafito/80 mb-1">
               Alias / Pseudónimos
             </label>
-            <p className="text-xs text-slate-400 mb-1.5">
+            <p className="text-xs text-grafito/50 mb-1.5">
               Nombres alternativos separados por coma. La app los usará para evitar duplicados.
             </p>
             <input
               type="text"
               value={aliases}
               onChange={e => setAliases(e.target.value)}
-              className="w-full px-3 py-2.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2.5 border border-grafito/10 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-verde"
               placeholder="Ej: Hiper, Hipermaxi SRL, hipermaxi norte"
             />
           </div>
@@ -112,14 +112,14 @@ function SupermarketModal({
             <button
               type="button"
               onClick={onClose}
-              className="flex-1 py-2.5 border border-slate-200 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-50"
+              className="flex-1 py-2.5 border border-grafito/10 rounded-xl text-sm font-medium text-grafito/70 hover:bg-crema/50"
             >
               Cancelar
             </button>
             <button
               type="submit"
               disabled={loading}
-              className="flex-1 py-2.5 bg-blue-600 hover:bg-blue-700 disabled:opacity-50 rounded-xl text-sm font-semibold text-white"
+              className="flex-1 py-2.5 bg-verde hover:bg-verde/90 disabled:opacity-50 rounded-xl text-sm font-semibold text-white"
             >
               {loading ? 'Guardando...' : supermarket ? 'Guardar' : 'Crear'}
             </button>
@@ -172,14 +172,14 @@ function MergeModal({
   if (targets.length === 0) {
     return (
       <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/20">
-        <div className="bg-white rounded-2xl shadow-xl w-full max-w-sm p-6">
-          <h3 className="font-semibold text-slate-900 mb-2">Sin destino disponible</h3>
-          <p className="text-sm text-slate-500 mb-4">
+        <div className="bg-crema rounded-2xl shadow-xl w-full max-w-sm p-6">
+          <h3 className="font-semibold text-grafito mb-2">Sin destino disponible</h3>
+          <p className="text-sm text-grafito/70 mb-4">
             No hay otros supermercados a los que migrar los datos. Crea otro supermercado primero.
           </p>
           <button
             onClick={onClose}
-            className="w-full py-2.5 border border-slate-200 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-50"
+            className="w-full py-2.5 border border-grafito/10 rounded-xl text-sm font-medium text-grafito/70 hover:bg-crema/50"
           >
             Cerrar
           </button>
@@ -190,29 +190,29 @@ function MergeModal({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/20">
-      <div className="bg-white rounded-2xl shadow-xl w-full max-w-sm p-6">
-        <div className="w-12 h-12 bg-orange-100 rounded-2xl flex items-center justify-center mb-4">
-          <ArrowRightLeft size={22} className="text-orange-600" />
+      <div className="bg-crema rounded-2xl shadow-xl w-full max-w-sm p-6">
+        <div className="w-12 h-12 bg-ambar/10 rounded-2xl flex items-center justify-center mb-4">
+          <ArrowRightLeft size={22} className="text-ambar" />
         </div>
-        <h3 className="font-semibold text-slate-900 mb-2">Migrar supermercado</h3>
-        <p className="text-sm text-slate-500 mb-1">
-          Todos los productos de <span className="font-medium text-slate-800">{source.name}</span> se
-          moverán al supermercado destino, y <span className="font-medium text-slate-800">{source.name}</span> será eliminado.
+        <h3 className="font-semibold text-grafito mb-2">Migrar supermercado</h3>
+        <p className="text-sm text-grafito/70 mb-1">
+          Todos los productos de <span className="font-medium text-grafito">{source.name}</span> se
+          moverán al supermercado destino, y <span className="font-medium text-grafito">{source.name}</span> será eliminado.
         </p>
         {productCount !== null && (
-          <p className="text-sm font-medium text-orange-600 mb-4">
+          <p className="text-sm font-medium text-ambar mb-4">
             {productCount} producto{productCount !== 1 ? 's' : ''} serán migrado{productCount !== 1 ? 's' : ''}.
           </p>
         )}
 
         <div className="mb-5">
-          <label className="block text-sm font-medium text-slate-700 mb-1.5">
+          <label className="block text-sm font-medium text-grafito/80 mb-1.5">
             Mover hacia
           </label>
           <select
             value={targetId}
             onChange={e => setTargetId(e.target.value)}
-            className="w-full px-3 py-2.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-3 py-2.5 border border-grafito/10 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-verde"
           >
             {targets.map(t => (
               <option key={t.id} value={t.id}>{t.name}</option>
@@ -223,14 +223,14 @@ function MergeModal({
         <div className="flex gap-3">
           <button
             onClick={onClose}
-            className="flex-1 py-2.5 border border-slate-200 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-50"
+            className="flex-1 py-2.5 border border-grafito/10 rounded-xl text-sm font-medium text-grafito/70 hover:bg-crema/50"
           >
             Cancelar
           </button>
           <button
             onClick={handleMerge}
             disabled={loading || !target}
-            className="flex-1 py-2.5 bg-orange-600 hover:bg-orange-700 disabled:opacity-50 rounded-xl text-sm font-semibold text-white"
+            className="flex-1 py-2.5 bg-ambar hover:bg-ambar/80 disabled:opacity-50 rounded-xl text-sm font-semibold text-white"
           >
             {loading ? 'Migrando...' : 'Migrar y eliminar'}
           </button>
@@ -271,16 +271,16 @@ function DeleteConfirm({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/20">
-      <div className="bg-white rounded-2xl shadow-xl w-full max-w-sm p-6">
-        <div className="w-12 h-12 bg-red-100 rounded-2xl flex items-center justify-center mb-4">
-          <Trash2 size={22} className="text-red-600" />
+      <div className="bg-crema rounded-2xl shadow-xl w-full max-w-sm p-6">
+        <div className="w-12 h-12 bg-error/10 rounded-2xl flex items-center justify-center mb-4">
+          <Trash2 size={22} className="text-amber-600" />
         </div>
-        <h3 className="font-semibold text-slate-900 mb-2">Eliminar supermercado</h3>
-        <p className="text-sm text-slate-500 mb-1">
-          ¿Seguro que quieres eliminar <span className="font-medium text-slate-800">{supermarket.name}</span>?
+        <h3 className="font-semibold text-grafito mb-2">Eliminar supermercado</h3>
+        <p className="text-sm text-grafito/70 mb-1">
+          ¿Seguro que quieres eliminar <span className="font-medium text-grafito">{supermarket.name}</span>?
         </p>
         {productCount !== null && productCount > 0 && (
-          <p className="text-sm text-red-600 font-medium mb-4">
+          <p className="text-sm text-amber-600 font-medium mb-4">
             Esto también eliminará {productCount} producto{productCount !== 1 ? 's' : ''} asociado{productCount !== 1 ? 's' : ''}. Considera usar "Migrar" para conservarlos.
           </p>
         )}
@@ -288,14 +288,14 @@ function DeleteConfirm({
         <div className="flex gap-3 mt-5">
           <button
             onClick={onClose}
-            className="flex-1 py-2.5 border border-slate-200 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-50"
+            className="flex-1 py-2.5 border border-grafito/10 rounded-xl text-sm font-medium text-grafito/70 hover:bg-crema/50"
           >
             Cancelar
           </button>
           <button
             onClick={handleDelete}
             disabled={loading}
-            className="flex-1 py-2.5 bg-red-600 hover:bg-red-700 disabled:opacity-50 rounded-xl text-sm font-semibold text-white"
+            className="flex-1 py-2.5 bg-error hover:bg-error/80 disabled:opacity-50 rounded-xl text-sm font-semibold text-white"
           >
             {loading ? 'Eliminando...' : 'Eliminar'}
           </button>
@@ -345,14 +345,14 @@ export default function MarketsPage() {
     <div>
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h1 className="text-xl font-bold text-slate-900">Supermercados</h1>
-          <p className="text-sm text-slate-500 mt-0.5">
+          <h1 className="text-xl font-bold text-grafito">Supermercados</h1>
+          <p className="text-sm text-grafito/70 mt-0.5">
             {supermarkets.length} supermercado{supermarkets.length !== 1 ? 's' : ''} registrado{supermarkets.length !== 1 ? 's' : ''}
           </p>
         </div>
         <button
           onClick={() => { setEditing(null); setModalOpen(true) }}
-          className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-4 py-2.5 rounded-xl transition-colors"
+          className="flex items-center gap-2 bg-verde hover:bg-verde/90 text-white text-sm font-semibold px-4 py-2.5 rounded-xl transition-colors"
         >
           <Plus size={16} />
           Nuevo supermercado
@@ -360,28 +360,28 @@ export default function MarketsPage() {
       </div>
 
       <div className="relative mb-4">
-        <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+        <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-grafito/50" />
         <input
           type="text"
           value={search}
           onChange={e => setSearch(e.target.value)}
           placeholder="Buscar por nombre o alias..."
-          className="w-full max-w-sm pl-9 pr-4 py-2.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
+          className="w-full max-w-sm pl-9 pr-4 py-2.5 border border-grafito/10 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-verde bg-crema"
         />
       </div>
 
       {loading ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {[...Array(6)].map((_, i) => (
-            <div key={i} className="bg-white rounded-2xl border border-slate-200 p-5 animate-pulse">
-              <div className="w-10 h-10 bg-slate-100 rounded-xl mb-3" />
-              <div className="h-4 bg-slate-100 rounded w-3/4 mb-2" />
-              <div className="h-3 bg-slate-100 rounded w-1/2" />
+            <div key={i} className="bg-crema rounded-2xl border border-grafito/10 p-5 animate-pulse">
+              <div className="w-10 h-10 bg-crema/80 rounded-xl mb-3" />
+              <div className="h-4 bg-crema/80 rounded w-3/4 mb-2" />
+              <div className="h-3 bg-crema/80 rounded w-1/2" />
             </div>
           ))}
         </div>
       ) : filtered.length === 0 ? (
-        <div className="text-center py-16 text-slate-400">
+        <div className="text-center py-16 text-grafito/50">
           <Store size={40} className="mx-auto mb-3 opacity-40" />
           <p className="text-sm font-medium">No se encontraron supermercados</p>
           {search && <p className="text-xs mt-1">Intenta con otro término</p>}
@@ -391,43 +391,43 @@ export default function MarketsPage() {
           {filtered.map(supermarket => (
             <div
               key={supermarket.id}
-              className="bg-white rounded-2xl border border-slate-200 p-5 hover:shadow-md transition-shadow"
+              className="bg-crema rounded-2xl border border-grafito/10 p-5 hover:shadow-md transition-shadow"
             >
               <div className="flex items-start justify-between mb-3">
-                <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center">
-                  <Store size={20} className="text-blue-600" />
+                <div className="w-10 h-10 bg-verde/10 rounded-xl flex items-center justify-center">
+                  <Store size={20} className="text-verde" />
                 </div>
                 <div className="flex gap-1">
                   <button
                     onClick={() => { setEditing(supermarket); setModalOpen(true) }}
-                    className="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                    className="p-1.5 text-grafito/50 hover:text-verde hover:bg-verde/10 rounded-lg transition-colors"
                     title="Editar"
                   >
                     <Pencil size={15} />
                   </button>
                   <button
                     onClick={() => setMerging(supermarket)}
-                    className="p-1.5 text-slate-400 hover:text-orange-600 hover:bg-orange-50 rounded-lg transition-colors"
+                    className="p-1.5 text-grafito/50 hover:text-ambar hover:bg-ambar/10 rounded-lg transition-colors"
                     title="Migrar a otro supermercado"
                   >
                     <ArrowRightLeft size={15} />
                   </button>
                   <button
                     onClick={() => setDeleting(supermarket)}
-                    className="p-1.5 text-slate-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors"
+                    className="p-1.5 text-grafito/50 hover:text-error hover:bg-error/10 rounded-lg transition-colors"
                     title="Eliminar"
                   >
                     <Trash2 size={15} />
                   </button>
                 </div>
               </div>
-              <h3 className="font-semibold text-slate-900 text-sm">{supermarket.name}</h3>
+              <h3 className="font-semibold text-grafito text-sm">{supermarket.name}</h3>
               {supermarket.aliases && supermarket.aliases.length > 0 && (
-                <p className="text-xs text-slate-400 mt-0.5 truncate" title={supermarket.aliases.join(', ')}>
+                <p className="text-xs text-grafito/50 mt-0.5 truncate" title={supermarket.aliases.join(', ')}>
                   {supermarket.aliases.join(', ')}
                 </p>
               )}
-              <p className="text-xs text-slate-400 mt-1">
+              <p className="text-xs text-grafito/50 mt-1">
                 {productCounts[supermarket.name] ?? 0} producto{(productCounts[supermarket.name] ?? 0) !== 1 ? 's' : ''}
               </p>
             </div>

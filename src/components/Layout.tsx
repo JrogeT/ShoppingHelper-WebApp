@@ -22,18 +22,18 @@ function Sidebar({ collapsed, onClose }: { collapsed: boolean; onClose?: () => v
   }
 
   return (
-    <aside className={`flex flex-col bg-white border-r border-slate-200 h-full transition-all duration-200 ${collapsed ? 'w-0 overflow-hidden' : 'w-64'}`}>
+    <aside className={`flex flex-col bg-crema border-r border-grafito/10 h-full transition-all duration-200 ${collapsed ? 'w-0 overflow-hidden' : 'w-64'}`}>
       {/* Logo */}
-      <div className="flex items-center gap-3 px-5 py-5 border-b border-slate-100">
-        <div className="w-9 h-9 bg-blue-600 rounded-xl flex items-center justify-center shrink-0">
+      <div className="flex items-center gap-3 px-5 py-5 border-b border-grafito/10">
+        <div className="w-9 h-9 bg-verde rounded-xl flex items-center justify-center shrink-0">
           <ShoppingCart className="text-white" size={18} />
         </div>
         <div>
-          <p className="font-bold text-slate-900 text-sm leading-tight">Shopping Helper</p>
-          <p className="text-xs text-slate-400">Admin Panel</p>
+          <p className="font-bold text-grafito text-sm leading-tight">Canasta</p>
+          <p className="text-xs text-grafito/50">Admin Panel</p>
         </div>
         {onClose && (
-          <button onClick={onClose} className="ml-auto text-slate-400 hover:text-slate-600 lg:hidden">
+          <button onClick={onClose} className="ml-auto text-grafito/50 hover:text-grafito/70 lg:hidden">
             <X size={18} />
           </button>
         )}
@@ -50,16 +50,16 @@ function Sidebar({ collapsed, onClose }: { collapsed: boolean; onClose?: () => v
             className={({ isActive }) =>
               `flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-colors ${
                 isActive
-                  ? 'bg-blue-50 text-blue-700'
-                  : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
+                  ? 'bg-verde/10 text-verde'
+                  : 'text-grafito/70 hover:bg-crema/50 hover:text-grafito'
               }`
             }
           >
             {({ isActive }) => (
               <>
-                <Icon size={18} className={isActive ? 'text-blue-600' : 'text-slate-400'} />
+                <Icon size={18} className={isActive ? 'text-verde' : 'text-grafito/50'} />
                 {label}
-                {isActive && <ChevronRight size={14} className="ml-auto text-blue-400" />}
+                {isActive && <ChevronRight size={14} className="ml-auto text-verde" />}
               </>
             )}
           </NavLink>
@@ -67,18 +67,18 @@ function Sidebar({ collapsed, onClose }: { collapsed: boolean; onClose?: () => v
       </nav>
 
       {/* User */}
-      <div className="border-t border-slate-100 px-3 py-3">
+      <div className="border-t border-grafito/10 px-3 py-3">
         <div className="flex items-center gap-3 px-3 py-2 mb-1">
-          <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 text-xs font-bold shrink-0">
+          <div className="w-8 h-8 rounded-full bg-verde/10 flex items-center justify-center text-verde text-xs font-bold shrink-0">
             {user?.email?.[0]?.toUpperCase() ?? 'U'}
           </div>
           <div className="min-w-0">
-            <p className="text-xs font-medium text-slate-900 truncate">{user?.email ?? 'Usuario'}</p>
+            <p className="text-xs font-medium text-grafito truncate">{user?.email ?? 'Usuario'}</p>
           </div>
         </div>
         <button
           onClick={handleSignOut}
-          className="w-full flex items-center gap-3 px-3 py-2 rounded-xl text-sm text-slate-600 hover:bg-red-50 hover:text-red-600 transition-colors"
+          className="w-full flex items-center gap-3 px-3 py-2 rounded-xl text-sm text-grafito/70 hover:bg-error/10 hover:text-error transition-colors"
         >
           <LogOut size={16} />
           Cerrar sesión
@@ -92,7 +92,7 @@ export default function Layout({ children }: { children: ReactNode }) {
   const [mobileOpen, setMobileOpen] = useState(false)
 
   return (
-    <div className="flex h-screen bg-slate-50 overflow-hidden">
+    <div className="flex h-screen bg-crema/50 overflow-hidden">
       {/* Desktop sidebar */}
       <div className="hidden lg:flex shrink-0">
         <Sidebar collapsed={false} />
@@ -111,14 +111,14 @@ export default function Layout({ children }: { children: ReactNode }) {
       {/* Main */}
       <div className="flex-1 flex flex-col overflow-hidden">
         {/* Mobile header */}
-        <header className="lg:hidden flex items-center gap-3 px-4 py-3 bg-white border-b border-slate-200">
-          <button onClick={() => setMobileOpen(true)} className="text-slate-500">
+        <header className="lg:hidden flex items-center gap-3 px-4 py-3 bg-crema border-b border-grafito/10">
+          <button onClick={() => setMobileOpen(true)} className="text-grafito/70">
             <Menu size={22} />
           </button>
-          <div className="w-7 h-7 bg-blue-600 rounded-lg flex items-center justify-center">
+          <div className="w-7 h-7 bg-verde rounded-lg flex items-center justify-center">
             <ShoppingCart className="text-white" size={14} />
           </div>
-          <span className="font-semibold text-slate-900 text-sm">Shopping Helper</span>
+          <span className="font-semibold text-grafito text-sm">Canasta</span>
         </header>
 
         <main className="flex-1 overflow-y-auto p-4 lg:p-6">

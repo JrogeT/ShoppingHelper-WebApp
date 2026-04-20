@@ -1,9 +1,9 @@
 export default function PrivacyPolicyPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-crema">
       <div className="max-w-3xl mx-auto px-6 py-12">
-        <h1 className="text-3xl font-bold text-slate-900 mb-2">Política de Privacidad</h1>
-        <p className="text-sm text-slate-500 mb-8">Última actualización: 17 de abril de 2026</p>
+        <h1 className="text-3xl font-bold text-grafito mb-2">Política de Privacidad</h1>
+        <p className="text-sm text-grafito/70 mb-8">Última actualización: 17 de abril de 2026</p>
 
         <Section title="1. Información General">
           <p>
@@ -59,7 +59,7 @@ export default function PrivacyPolicyPage() {
         </Section>
 
         <Section title="4. Compartición y Venta de Datos">
-          <p className="font-semibold text-slate-800">
+          <p className="font-semibold text-grafito">
             Podemos compartir o vender tu información personal a terceros en los siguientes casos:
           </p>
           <ul className="list-disc pl-5 space-y-2 mt-3">
@@ -86,7 +86,7 @@ export default function PrivacyPolicyPage() {
               activos, tu información podría ser transferida a la entidad resultante.
             </li>
           </ul>
-          <p className="mt-3 text-slate-700">
+          <p className="mt-3 text-grafito/80">
             Al usar la Aplicación, consientes expresamente la posibilidad de que tus datos sean
             compartidos o vendidos según lo descrito en esta sección.
           </p>
@@ -143,13 +143,13 @@ export default function PrivacyPolicyPage() {
 
         <Section title="10. Contacto">
           <p>Si tienes preguntas, comentarios o solicitudes relacionadas con esta Política de Privacidad, puedes contactarnos en:</p>
-          <div className="mt-3 p-4 bg-slate-50 rounded-lg border border-slate-200">
-            <p className="font-medium text-slate-800">Shopping Helper</p>
-            <p className="text-slate-600 mt-1">
+          <div className="mt-3 p-4 bg-crema/50 rounded-lg border border-grafito/10">
+            <p className="font-medium text-grafito">Shopping Helper</p>
+            <p className="text-grafito/70 mt-1">
               Correo electrónico:{' '}
               <a
                 href="mailto:jorgerodrigotorrez@gmail.com"
-                className="text-blue-600 hover:underline"
+                className="text-verde hover:underline"
               >
                 jorgerodrigotorrez@gmail.com
               </a>
@@ -164,10 +164,10 @@ export default function PrivacyPolicyPage() {
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <section className="mb-8">
-      <h2 className="text-xl font-semibold text-slate-800 mb-3 border-b border-slate-200 pb-2">
+      <h2 className="text-xl font-semibold text-grafito mb-3 border-b border-grafito/10 pb-2">
         {title}
       </h2>
-      <div className="text-slate-700 leading-relaxed">{children}</div>
+      <div className="text-grafito/80 leading-relaxed">{children}</div>
     </section>
   )
 }
@@ -175,7 +175,7 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 function Subsection({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div className="mt-3">
-      <h3 className="font-medium text-slate-800 mb-1">{title}</h3>
+      <h3 className="font-medium text-grafito mb-1">{title}</h3>
       {children}
     </div>
   )

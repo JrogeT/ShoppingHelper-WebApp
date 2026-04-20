@@ -1,1 +1,23 @@
 @import "tailwindcss";
+
+@theme {
+  --color-verde: #1F6F54;
+  --color-verde-profundo: #0F3D2F;
+  --color-ambar: #E8B547;
+  --color-oro-suave: #F4D591;
+  --color-crema: #F5F1E8;
+  --color-hueso: #FAFAF7;
+  --color-grafito: #1A1F2E;
+  --color-piedra: #6B7280;
+  --color-borde: #D1D5DB;
+  --color-error: #B3321C;
+
+  --font-display: "Gloock", serif;
+  --font-sans: "Outfit", sans-serif;
+  --font-mono: "Geist Mono", monospace;
+  --font-editorial: "Instrument Serif", serif;
+}
+
+body {
+  @apply bg-crema text-grafito font-sans;
+}
